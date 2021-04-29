@@ -1,0 +1,9 @@
+.\release\objects\system_fm33lc0xx.o: ..\Drivers\CMSIS\Device\FM\FM33xx\Source\system_fm33lc0xx.c
+.\release\objects\system_fm33lc0xx.o: ..\Drivers\CMSIS\Device\FM\FM33xx\Include\fm33lc0xx.h
+.\release\objects\system_fm33lc0xx.o: ..\Drivers\CMSIS\Device\FM\FM33xx\Include\core_cm0plus.h
+.\release\objects\system_fm33lc0xx.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\release\objects\system_fm33lc0xx.o: ..\Drivers\CMSIS\Device\FM\FM33xx\Include\core_cminstr.h
+.\release\objects\system_fm33lc0xx.o: ..\Drivers\CMSIS\Device\FM\FM33xx\Include\core_cmfunc.h
+.\release\objects\system_fm33lc0xx.o: ..\Drivers\CMSIS\Device\FM\FM33xx\Include\system_fm33lc0xx.h
+.\release\objects\system_fm33lc0xx.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\release\objects\system_fm33lc0xx.o: ..\Drivers\CMSIS\Device\FM\FM33xx\Include\fm33lc0xx.h

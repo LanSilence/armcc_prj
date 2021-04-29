@@ -1,0 +1,5 @@
+OBJS=*.o
+ODIR=Objects
+$(BIN_DIR)/$(RROJECT_NAME).axf:$(ODIR)/$(OBJS)
+	$(LINK) $(LINK_FLAG) -o $@ $^ 
+	$(FROM_ELF) $(FROM_ELF_FLAG) $(BIN_DIR)\$(RROJECT_NAME).axf

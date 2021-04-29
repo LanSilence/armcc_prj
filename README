@@ -1,0 +1,40 @@
+该工程是一个MDK的工程，脱离了MDK进行代码的编写
+本工程的芯片为复旦微FM33LC0XX
+编译器目录是为自己电脑的编译器目录具体查看根目录下makefile 第一二两行
+
+如果需要增加新的目录模块则复制一份子目录下的makefile文件，然后再把文件目录添加到根目录文件下
+SUBDIRS= Drivers\FM33LC0xx_LL_Driver\Src \
+         Drivers\CMSIS\Device\FM\FM33xx\Source \
+         Drivers\CMSIS\Device\FM\FM33xx\Source\Templates\ARM \
+         MF-config\Src \
+         BSP \
+         main \
+         Timer_task \
+         User_app \
+         drv \
+在后面追加即可
+
+同理也要修改头文件路径
+INCLUDE_DIR = $(ROOT_DIR)\BSP \
+			  $(ROOT_DIR)\main \
+			  $(ROOT_DIR)\Timer_task \
+			  $(ROOT_DIR)\User_app \
+			  $(ROOT_DIR)\drv \
+			  $(ROOT_DIR)\Drivers\FM33LC0xx_LL_Driver\Inc \
+			  $(ROOT_DIR)\Drivers\CMSIS\Device\FM\FM33xx\Include \
+			  $(ROOT_DIR)\Inc \
+			  $(ROOT_DIR)\MF-config\Inc
+在后面追加即可
+
+如需要修改芯片替换工程，则将子目录下的makefile复制到所有包含.c 和.s文件的目录下即可，修改SUBDIRS为包含所有.c .s的目录。同理INCLUDE_DIR 也要修改为相对应的
+头文件目录。同时需要复制一份sct文件到MDK-ARM目录下。名字为工程名
+
+最后修改根目录下的三个地方
+RROJECT_NAME
+CPU_TYPE
+CHIP_TYPE
+分别对应工程名称，也是最后生成文件的名称，也是sct文件的名称;
+CPU类型，内核类型 M0，M0+ M1 M3 M4 具体使用armcc --list cpu 查看;
+芯片类型，这个如果设置不对，会报错，然后去报错的位置复制正确的即可，是一个宏定义;
+最后make 不要使用make -jn(会报错，暂时不知道为啥会错)
+make时提示没有的文件夹新建一下即可
